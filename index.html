@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow" data-podglad>
+<title>Noclegi Korbielów pod Pilskiem - Dom Wypoczynkowy Pod Polanką</title>
+<meta name="description" content="Dom Wypoczynkowy Pod Polanką w Korbielowie: pokoje z łazienkami, śniadania, ogród z placem zabaw, wiata z grillem, parking. 100 m od zielonego szlaku na Pilsko. Tel. 508 714 249.">
+<meta name="theme-color" content="#543128">
+<link rel="icon" type="image/svg+xml" href="img/znak.svg">
+<link rel="preload" href="fonts/montserrat-rdzen.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/lora-rdzen.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="img/hero-1024.webp" imagesrcset="img/hero-640.webp 640w, img/hero-1024.webp 1024w, img/hero-1600.webp 1600w, img/hero-2500.webp 2500w" imagesizes="(max-aspect-ratio:1/1) 180vh, 100vw" fetchpriority="high">
+<style>
+@font-face{font-family:"Montserrat";font-style:normal;font-weight:500 700;font-display:swap;src:url(fonts/montserrat-rdzen.woff2) format("woff2");unicode-range:U+0020-007E,U+00A0,U+00A9,U+00AB,U+00B0,U+00B7,U+00BB,U+00D3,U+00F3,U+2013,U+2018-2019,U+201C-201E,U+2022,U+2026}
+@font-face{font-family:"Montserrat";font-style:normal;font-weight:500 700;font-display:swap;src:url(fonts/montserrat-pl.woff2) format("woff2");unicode-range:U+0104-0107,U+0118-0119,U+0141-0144,U+015A-015B,U+0179-017C}
+@font-face{font-family:"Lora";font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/lora-rdzen.woff2) format("woff2");unicode-range:U+0020-007E,U+00A0,U+00A9,U+00AB,U+00B0,U+00B7,U+00BB,U+00D3,U+00D7,U+00F3,U+2013-2014,U+2018-2019,U+201C-201E,U+2022,U+2026}
+@font-face{font-family:"Lora";font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/lora-pl.woff2) format("woff2");unicode-range:U+0104-0107,U+0118-0119,U+0141-0144,U+015A-015B,U+0179-017C}
+
+/* kolory z logo i domu: braz drewna #543128, czerwien dachu #B23A30, zielony znak szlaku */
+:root{--braz:#543128;--braz2:#2B1912;--dach:#B23A30;--dach2:#962E25;--szlak:#1E8B3E;--ink:#24140F;--txt:#3B2B26;--mut:#6D5E59;--szary:#F2F3F4;--linia:#E1E3E5;--w:1200px;--top:64px;
+--sans:"Montserrat",system-ui,"Segoe UI",Arial,sans-serif;--serif:"Lora",Georgia,serif}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:var(--top)}
+body{margin:0;background:#fff;color:var(--txt);font:17px/1.65 var(--serif);overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--sans);color:var(--ink);line-height:1.18;margin:0;font-weight:700;letter-spacing:-.01em}
+h2{font-size:clamp(1.75rem,1.2rem + 2vw,2.6rem)}
+h3{font-size:1.15rem}
+p{margin:0 0 1em}
+.wrap{width:min(100% - 32px,var(--w));margin-inline:auto}
+.lead{font-size:1.1rem;color:var(--txt);max-width:40em}
+
+/* naglowek */
+.top{position:sticky;top:0;z-index:50;height:var(--top);background:#fff;border-bottom:1px solid var(--linia)}
+.top-in{height:100%;display:flex;align-items:center;gap:24px;width:min(100% - 32px,1400px);margin-inline:auto}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--braz);font:700 1.15rem/1 var(--sans);letter-spacing:.02em;white-space:nowrap}
+.logo svg{width:44px;height:38px;flex:none}
+.menu{display:flex;gap:26px;margin-left:auto;font:600 .95rem/1 var(--sans)}
+.menu a{text-decoration:none;color:var(--txt);padding:8px 0;border-bottom:2px solid transparent}
+.menu a:hover,.menu a[aria-current]{color:var(--braz);border-color:var(--dach)}
+.tel-top{display:flex;align-items:center;gap:8px;font:700 .98rem/1 var(--sans);color:#fff;background:var(--dach);text-decoration:none;padding:11px 16px;border-radius:4px}
+.tel-top:hover{background:var(--dach2)}
+.tel-top svg{width:17px;height:17px}
+.burger{display:none;margin-left:auto;background:none;border:1px solid var(--linia);border-radius:4px;height:42px;padding:0 12px;font:600 .9rem var(--sans);color:var(--braz);align-items:center;gap:8px;cursor:pointer}
+.burger i{display:block;width:18px;height:2px;background:currentColor;box-shadow:0 -6px 0 currentColor,0 6px 0 currentColor}
+
+/* pierwszy ekran */
+.hero{position:relative;min-height:calc(100svh - var(--top));display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:#3c4f2c}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:57% 45%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,12,8,0) 30%,rgba(20,12,8,.62) 78%),linear-gradient(90deg,rgba(20,12,8,.5),rgba(20,12,8,0) 60%)}
+.hero-in{position:relative;z-index:2;padding:48px 0 56px;width:min(100% - 32px,1400px)}
+.hero h1{color:#fff;font-size:clamp(2rem,1.3rem + 2.4vw,3.4rem);max-width:14em;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+.hero p{font-size:clamp(1.02rem,.95rem + .4vw,1.25rem);max-width:34em;margin:18px 0 28px;text-shadow:0 1px 10px rgba(0,0,0,.45)}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:4px;font:700 1rem/1.1 var(--sans);text-decoration:none;cursor:pointer;border:2px solid transparent}
+.btn svg{width:18px;height:18px}
+.btn-dach{background:var(--dach);color:#fff}
+.btn-dach:hover{background:var(--dach2)}
+.btn-jasny{background:#fff;color:var(--braz)}
+.btn-jasny:hover{background:#f1ece9}
+.oceny{max-width:46em;margin-top:22px;font:500 .92rem/1.4 var(--sans);opacity:.95;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+
+/* sekcje */
+.sek{padding:clamp(64px,8vw,112px) 0}
+.szara{background:var(--szary)}
+.glowa{max-width:46em;margin-bottom:36px}
+.glowa h2{margin-bottom:16px}
+
+/* szczyt dachu z logo jako okno zdjecia */
+.szczyt{clip-path:polygon(50% 0,100% 13%,100% 100%,0 100%,0 13%)}
+
+/* okolica */
+.okolica{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,72px);align-items:center}
+.okolica-foto{position:relative}
+.okolica-foto img{width:100%;max-width:520px;margin-left:auto;aspect-ratio:698/768;object-fit:cover}
+.odl{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 48px;margin-top:clamp(40px,5vw,64px)}
+.odl h3{font-size:1rem;margin-bottom:10px;color:var(--braz)}
+.odl ul{list-style:none;margin:0;padding:0}
+.odl li{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--linia);font-size:.98rem}
+.odl li b{font:600 .95rem/1.6 var(--sans);color:var(--ink);white-space:nowrap}
+.znak{display:inline-block;width:20px;height:13px;flex:none;margin:6px 8px 0 0;background:linear-gradient(#fff 0 33%,var(--szlak) 33% 67%,#fff 67%);border:1px solid #c9ccce;border-radius:1px}
+.odl li span{display:flex;align-items:flex-start}
+
+/* karuzela */
+.kar{position:relative}
+.kar-tor{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px max(16px,calc((100% - var(--w))/2)) 12px;scrollbar-width:none;cursor:grab}
+.kar-tor::-webkit-scrollbar{display:none}
+.kar-tor.ciag{cursor:grabbing;scroll-snap-type:none}
+.kar-tor > *{scroll-snap-align:start;flex:none}
+.kar-tor img{-webkit-user-drag:none;user-select:none}
+.pokoj img{height:clamp(340px,34vw,460px);width:auto;max-width:none;background:#ddd}
+.kar-nav{display:flex;gap:10px;justify-content:flex-end;width:min(100% - 32px,var(--w));margin:18px auto 0}
+.kar-nav button{width:48px;height:48px;border-radius:4px;border:1.5px solid var(--braz);background:#fff;color:var(--braz);cursor:pointer;display:grid;place-items:center}
+.kar-nav button:hover{background:var(--braz);color:#fff}
+.kar-nav svg{width:20px;height:20px}
+.fakty{display:flex;flex-wrap:wrap;gap:10px 28px;margin:0;padding:0;list-style:none;font:600 .95rem/1.4 var(--sans);color:var(--braz)}
+.fakty li{display:flex;align-items:center;gap:8px}
+.fakty li::before{content:"";width:12px;height:10px;background:var(--dach);clip-path:polygon(50% 0,100% 40%,100% 100%,0 100%,0 40%)}
+
+/* kuchnia - ciemna sekcja */
+.kuchnia{background:var(--braz2);color:#EADFD9}
+.kuchnia h2,.kuchnia h3{color:#fff}
+.kuchnia-in{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px);align-items:center}
+.kuchnia-fot{display:grid;grid-template-columns:1.4fr 1fr;gap:12px}
+.kuchnia-fot img{width:100%;height:100%;object-fit:cover}
+.kuchnia-fot .k1{grid-row:span 2;aspect-ratio:auto}
+.cytat{margin:28px 0 0;padding:0 0 0 20px;border-left:3px solid var(--dach)}
+.cytat p{font-style:italic;font-size:1.08rem;color:#fff;margin:0 0 6px}
+.cytat cite{font:500 .88rem var(--sans);font-style:normal;color:#C9B7AF}
+
+/* ogrod */
+.ogrod{display:grid;grid-template-columns:repeat(12,1fr);gap:12px;margin-top:8px}
+.ogrod figure{margin:0;position:relative;overflow:hidden}
+.ogrod img{width:100%;height:100%;object-fit:cover}
+.ogrod figcaption{position:absolute;left:0;bottom:0;right:0;padding:28px 16px 12px;font:600 .92rem/1.3 var(--sans);color:#fff;background:linear-gradient(transparent,rgba(20,12,8,.7))}
+.o1{grid-column:span 7;grid-row:span 2;aspect-ratio:815/768}
+.o2{grid-column:span 5;aspect-ratio:1024/683}
+.o3{grid-column:span 5;aspect-ratio:1024/683}
+.o4{grid-column:span 4;aspect-ratio:743/768}
+.o5{grid-column:span 4;aspect-ratio:1/1}
+.o6{grid-column:span 4;aspect-ratio:1/1}
+
+/* caly rok */
+.rok{display:grid;grid-template-columns:1.6fr 1fr;gap:clamp(24px,4vw,56px);align-items:end}
+.rok figure{margin:0}
+.rok img{width:100%;object-fit:cover}
+.rok .r1 img{aspect-ratio:4/3;max-width:1000px}
+.rok .r2 img{aspect-ratio:3/4;max-width:576px}
+.rok figcaption{margin-top:16px}
+.rok figcaption h3{margin-bottom:6px}
+.rok figcaption p{margin:0;color:var(--mut)}
+
+/* opinie */
+.opinia{width:min(84vw,400px);background:#fff;border:1px solid var(--linia);padding:26px 24px;display:flex;flex-direction:column}
+.opinia blockquote{margin:0 0 18px;font-size:1.02rem;flex:1}
+.opinia cite{font:600 .9rem/1.3 var(--sans);font-style:normal;color:var(--braz)}
+.opinia cite span{display:block;font-weight:500;color:var(--mut);margin-top:3px}
+.ocena-pas{display:flex;flex-wrap:wrap;gap:12px 40px;margin-top:6px;font:600 1rem/1.4 var(--sans);color:var(--ink)}
+.ocena-pas a{color:var(--dach);text-underline-offset:3px}
+
+/* kontakt */
+.kontakt{background:var(--braz);color:#F1E7E2}
+.kontakt h2{color:#fff}
+.kontakt-in{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(32px,5vw,64px)}
+.dane{font-size:1.05rem}
+.dane .tel{display:inline-block;font:700 clamp(1.6rem,1.2rem + 1.6vw,2.3rem)/1.1 var(--sans);color:#fff;text-decoration:none;margin:8px 0 14px}
+.dane a{color:#fff}
+.dane p{margin:0 0 12px}
+.dane .soc{display:flex;gap:18px;font:600 .95rem var(--sans)}
+.form{background:#fff;color:var(--txt);padding:clamp(22px,3vw,34px);border-radius:4px}
+.form h3{margin-bottom:16px;color:var(--ink)}
+.pola{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pola .cala{grid-column:1/-1}
+.form label{display:block;font:600 .85rem/1.3 var(--sans);color:var(--ink);margin-bottom:6px}
+.form input,.form textarea{width:100%;font:16px/1.4 var(--serif);padding:12px;border:1px solid #CFC7C3;border-radius:4px;background:#fff;color:var(--ink)}
+.form input:focus,.form textarea:focus{outline:2px solid var(--dach);outline-offset:1px;border-color:transparent}
+.form textarea{min-height:110px;resize:vertical}
+.form .btn{margin-top:16px;width:100%}
+.form .info{display:none;margin:14px 0 0;font:500 .92rem/1.4 var(--sans);color:var(--braz)}
+.form.wyslany .info{display:block}
+.mapa{margin-top:clamp(36px,5vw,56px);border-radius:4px;overflow:hidden;background:#d8d2cf}
+.mapa iframe{display:block;width:100%;height:clamp(300px,36vw,420px);border:0}
+
+/* stopka */
+.stopka{background:var(--braz2);color:#C9B7AF;padding:44px 0 32px;font:500 .92rem/1.6 var(--sans)}
+.stopka-in{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:28px}
+.stopka .logo{color:#fff;margin-bottom:12px}
+.stopka a{color:#fff;text-decoration:none}
+.stopka h3{color:#fff;font-size:.95rem;margin-bottom:8px}
+.stopka p{margin:0 0 4px}
+.stopka-dol{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;border-top:1px solid rgba(255,255,255,.12);margin-top:30px;padding-top:20px}
+
+@media (max-width:960px){
+  .menu{position:fixed;top:var(--top);left:0;right:0;flex-direction:column;gap:0;background:#fff;border-bottom:1px solid var(--linia);padding:8px 16px 16px;display:none}
+  .menu.otw{display:flex}
+  .menu a{padding:14px 4px;border-bottom:1px solid var(--linia);font-size:1.05rem}
+  .menu a[aria-current]{border-color:var(--linia);color:var(--dach)}
+  .burger{display:inline-flex}
+  .tel-top span{display:none}
+  .tel-top{padding:11px 13px;order:3}
+  .odl{grid-template-columns:1fr 1fr}
+  .okolica,.kuchnia-in,.kontakt-in,.rok{grid-template-columns:1fr}
+  .okolica-foto img{max-width:100%;aspect-ratio:4/3;object-position:50% 30%}
+  .okolica-foto{order:-1}
+  .stopka-in{grid-template-columns:1fr 1fr}
+  .stopka-in > :first-child{grid-column:1/-1}
+}
+@media (max-width:640px){
+  :root{--top:60px}
+  .top-in{gap:10px}
+  .hero-img{object-position:12% 45%}
+  body{font-size:16.5px}
+  .logo{font-size:1rem}
+  .logo svg{width:38px;height:33px}
+  .hero{align-items:flex-end}
+  .hero-in{padding:28px 0 26px}
+  .hero p{margin:14px 0 24px}
+  .btns{flex-direction:column}
+  .btn{width:100%}
+  .oceny{margin-top:16px;font-size:.84rem}
+  .odl{grid-template-columns:1fr;gap:24px}
+  .kar-tor{align-items:center}
+  .pokoj img{width:84vw;height:auto}
+  .ogrod{grid-template-columns:1fr 1fr;gap:8px}
+  .o1{grid-column:1/-1;grid-row:auto}
+  .o2,.o3,.o4,.o5,.o6{grid-column:span 1;aspect-ratio:1/1}
+  .o6{grid-column:1/-1;aspect-ratio:4/3}
+  .pola{grid-template-columns:1fr}
+  .kar-nav{display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+<style>
+.wylinka-badge{display:inline-flex;align-items:center;gap:.4em;color:inherit;text-decoration:none;font-size:.875em;line-height:1;opacity:.85}
+.wylinka-badge:hover,.wylinka-badge:focus-visible{opacity:1}
+.wylinka-badge:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:2px}
+.wylinka-badge svg{width:18px;height:18px;flex:none;overflow:visible}
+.wylinka-badge b{font-weight:600}
+.wylinka-badge .wy-old{opacity:.45;transform-origin:40px 30px;transition:transform .32s cubic-bezier(.3,.7,.4,1),opacity .32s ease-out}
+.wylinka-badge .wy-pod{opacity:0;transition:opacity .2s ease-out .08s}
+.wylinka-badge:hover .wy-old,.wylinka-badge:focus-visible .wy-old{transform:translate(9px,7px) rotate(9deg);opacity:0}
+.wylinka-badge:hover .wy-pod,.wylinka-badge:focus-visible .wy-pod{opacity:1}
+@media (prefers-reduced-motion:reduce){.wylinka-badge .wy-old,.wylinka-badge .wy-pod{transition:none}.wylinka-badge:hover .wy-old,.wylinka-badge:focus-visible .wy-old{transform:none;opacity:.45}.wylinka-badge:hover .wy-pod,.wylinka-badge:focus-visible .wy-pod{opacity:0}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="dom" viewBox="0 0 64 56"><g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"><path d="M9 23 32 4l23 19"/><path d="M15 52V24L32 10l17 14v28"/><path d="M26 25.5 32 20l6 5.5V31H26z"/><path d="M27 52V40h10v12"/><path d="M15 31 5 37v15M49 31l10 6v15"/><path d="M2 53h60"/></g></symbol>
+  <symbol id="tel" viewBox="0 0 24 24"><path d="M6.6 3.5 9 3l1.6 4.2-1.9 1.4a11 11 0 0 0 6.7 6.7l1.4-1.9L21 15l-.5 2.4c-.2 1-1.1 1.6-2.1 1.6C10.6 19 5 13.4 5 5.6c0-1 .6-1.9 1.6-2.1Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="top-in">
+    <a class="logo" href="./" aria-label="Pod Polanką - strona główna"><svg aria-hidden="true"><use href="#dom"/></svg><span>POD POLANKĄ</span></a>
+    <nav class="menu" id="menu" aria-label="Menu główne">
+      <a href="./" aria-current="page">Strona główna</a>
+      <a href="#pokoje">Pokoje</a>
+      <a href="#okolica">Okolica i szlaki</a>
+      <a href="#ogrod">Ogród i atrakcje</a>
+      <a href="#opinie">Opinie</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="menu"><i></i>Menu</button>
+    <a class="tel-top" href="tel:+48508714249" aria-label="Zadzwoń: 508 714 249"><svg aria-hidden="true"><use href="#tel"/></svg><span>508 714 249</span></a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <img class="hero-img" src="img/hero-1024.webp" srcset="img/hero-640.webp 640w, img/hero-1024.webp 1024w, img/hero-1600.webp 1600w, img/hero-2500.webp 2500w" sizes="(max-aspect-ratio:1/1) 180vh, 100vw" width="2500" height="1406" alt="Korbielów z lotu ptaka: dolina pod Pilskiem i zaznaczony Dom Wypoczynkowy Pod Polanką" fetchpriority="high">
+  <div class="hero-in wrap">
+    <h1>Noclegi w&nbsp;Korbielowie, 100&nbsp;m od szlaku na&nbsp;Pilsko</h1>
+    <p>Dom Wypoczynkowy Pod Polanką: pokoje z&nbsp;łazienkami, domowe śniadania, ogród z&nbsp;placem zabaw i&nbsp;własny parking. Zimą do domu dojedziesz na nartach.</p>
+    <div class="btns">
+      <a class="btn btn-dach" href="tel:+48508714249"><svg aria-hidden="true"><use href="#tel"/></svg>Zadzwoń: 508 714 249</a>
+      <a class="btn btn-jasny" href="#pokoje">Zobacz pokoje</a>
+    </div>
+    <p class="oceny">Ocena „doskonała” w&nbsp;Google (207 opinii) i&nbsp;na Booking.com (214 opinii)</p>
+  </div>
+</section>
+
+<section class="sek" id="okolica">
+  <div class="wrap okolica">
+    <div>
+      <div class="glowa">
+        <h2>Szlak na Pilsko zaczyna się za furtką</h2>
+        <p class="lead">Dom stoi w&nbsp;Korbielowie przy Ślepej Dolinie, pod stokami Pilska (1557&nbsp;m&nbsp;n.p.m.). Zielony szlak na szczyt mija nas w&nbsp;odległości 100&nbsp;m, kolej krzesełkowa Buczynka jest kilometr dalej, a&nbsp;do granicy ze Słowacją jest niecałe 4&nbsp;km.</p>
+        <p class="lead">Okolicę wybierają ci, którzy chodzą po górach i&nbsp;jeżdżą na nartach. Rano wychodzi się prosto na szlak, a&nbsp;po całym dniu wraca do ciepłego posiłku.</p>
+        <a class="btn btn-dach" href="#kontakt" style="margin-top:8px">Dojazd i mapa</a>
+      </div>
+    </div>
+    <div class="okolica-foto">
+      <img class="szczyt" src="img/dom-lato.webp" width="698" height="768" loading="lazy" alt="Drewniany dom Pod Polanką latem, przed nim ogród z kwiatami">
+    </div>
+  </div>
+  <div class="wrap">
+      <div class="odl">
+        <div>
+          <h3>W góry</h3>
+          <ul>
+            <li><span><i class="znak" aria-hidden="true"></i>Szlak zielony na Pilsko</span><b>100 m</b></li>
+            <li><span>Kolej krzesełkowa Buczynka</span><b>1 km</b></li>
+            <li><span>Szlak ze Slanej Vody na Babią Górę</span><b>15 km</b></li>
+            <li><span>Szlak z Sopotni Wielkiej na Halę Rysiankę</span><b>19 km</b></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Na co dzień</h3>
+          <ul>
+            <li><span>Sklep</span><b>500 m</b></li>
+            <li><span>Pizzeria, piekarnia</span><b>650 m</b></li>
+            <li><span>Żabka</span><b>750 m</b></li>
+            <li><span>Karczmy</span><b>1,8 km</b></li>
+            <li><span>Biedronka, Lewiatan</span><b>10 km</b></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Na wycieczkę</h3>
+          <ul>
+            <li><span>Granica ze Słowacją</span><b>3,7 km</b></li>
+            <li><span>Stara Karczma w Jeleśni (XVIII w.)</span><b>8,6 km</b></li>
+            <li><span>Żywiec</span><b>25 km</b></li>
+            <li><span>Szczyrk</span><b>42 km</b></li>
+            <li><span>Zakopane</span><b>94 km</b></li>
+          </ul>
+        </div>
+      </div>
+  </div>
+</section>
+
+<section class="sek szara" id="pokoje">
+  <div class="wrap">
+    <div class="glowa">
+      <h2>Pokoje z łazienkami, część z widokiem na góry</h2>
+      <p class="lead">Przyjmujemy osoby indywidualne, rodziny i grupy. Każdy pokój ma własną łazienkę, telewizor i bezpłatne Wi-Fi. Goście mają do dyspozycji wspólny salon i taras.</p>
+      <ul class="fakty">
+        <li>Prywatna łazienka</li><li>Wi-Fi bez opłat</li><li>Telewizor</li><li>Parking przy domu</li>
+      </ul>
+    </div>
+  </div>
+  <div class="kar" data-kar>
+    <div class="kar-tor">
+      <figure class="pokoj szer" style="margin:0"><img src="img/pokoj-1.webp" width="1024" height="576" loading="lazy" alt="Pokój pod skosem z drewnianym sufitem i kamienną ścianą"></figure>
+      <figure class="pokoj" style="margin:0"><img src="img/pokoj-3.webp" width="577" height="768" loading="lazy" alt="Pokój z podwójnym łóżkiem i oknem"></figure>
+      <figure class="pokoj" style="margin:0"><img src="img/pokoj-4.webp" width="576" height="768" loading="lazy" alt="Stół z krzesłami przy oknie w pokoju"></figure>
+      <figure class="pokoj szer" style="margin:0"><img src="img/pokoj-2.webp" width="1024" height="576" loading="lazy" alt="Pokój dwuosobowy z telewizorem"></figure>
+      <figure class="pokoj" style="margin:0"><img src="img/pokoj-5.webp" width="577" height="768" loading="lazy" alt="Pokój na poddaszu z drewnianym sufitem"></figure>
+      <figure class="pokoj" style="margin:0"><img src="img/lazienka-1.webp" width="577" height="768" loading="lazy" alt="Łazienka z kabiną prysznicową"></figure>
+      <figure class="pokoj" style="margin:0"><img src="img/pokoj-6.webp" width="576" height="768" loading="lazy" alt="Pokój wieloosobowy na poddaszu"></figure>
+      <figure class="pokoj" style="margin:0"><img src="img/pokoj-8.webp" width="577" height="768" loading="lazy" alt="Pokój z telewizorem na ścianie"></figure>
+      <figure class="pokoj" style="margin:0"><img src="img/lazienka-2.webp" width="577" height="768" loading="lazy" alt="Prysznic w łazience przy pokoju"></figure>
+      <figure class="pokoj" style="margin:0"><img src="img/pokoj-7.webp" width="432" height="768" loading="lazy" alt="Jasny pokój z oknem dachowym"></figure>
+    </div>
+    <div class="kar-nav">
+      <button type="button" data-kier="-1" aria-label="Poprzednie zdjęcia"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4 6.5 10l6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+      <button type="button" data-kier="1" aria-label="Następne zdjęcia"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7.5 4 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<section class="sek kuchnia" id="kuchnia">
+  <div class="wrap kuchnia-in">
+    <div>
+      <h2>Śniadania i obiady jak w domu</h2>
+      <p class="lead" style="color:#EADFD9;margin-top:16px">Śniadanie podajemy w&nbsp;jadalni, w&nbsp;formie bufetu albo kontynentalne. Wyżywienie przygotowujemy także dla grup. To o&nbsp;kuchni goście piszą najczęściej.</p>
+      <blockquote class="cytat"><p>„Śniadanie zdecydowanie kozak. Bardzo smacznie i&nbsp;treściwie. (...) Zupa ogórkowa jak u&nbsp;mojej babci.”</p><cite>Szczepan, opinia w Google</cite></blockquote>
+      <blockquote class="cytat"><p>„Śniadania obfite i&nbsp;na tyle urozmaicone, że nie dałem rady spróbować 1/3 wszystkiego.”</p><cite>Rafał, opinia na Booking.com</cite></blockquote>
+    </div>
+    <div class="kuchnia-fot">
+      <img class="k1" src="img/jadalnia.webp" width="432" height="768" loading="lazy" alt="Nakryty stół w jadalni z tulipanami">
+      <img src="img/sniadanie-1.webp" width="1024" height="768" loading="lazy" alt="Bufet śniadaniowy na kamiennym blacie">
+      <img src="img/sniadanie-2.webp" width="1024" height="768" loading="lazy" alt="Półmiski z wędlinami, serami i warzywami">
+    </div>
+  </div>
+</section>
+
+<section class="sek" id="ogrod">
+  <div class="wrap">
+    <div class="glowa">
+      <h2>Ogród, wiata z grillem i miejsce dla dzieci</h2>
+      <p class="lead">Wokół domu jest ogród z&nbsp;basenem ogrodowym, huśtawką i&nbsp;placem zabaw oraz wiata z&nbsp;grillem i&nbsp;paleniskiem. Na poddaszu stoi stół do ping-ponga. Po wcześniejszym ustaleniu zewnętrzna firma dowiezie gorącą balię albo mobilną saunę.</p>
+    </div>
+    <div class="ogrod">
+      <figure class="o1"><img src="img/ogrod-plac.webp" width="815" height="768" loading="lazy" alt="Plac zabaw ze zjeżdżalnią i basen ogrodowy na trawniku"><figcaption>Plac zabaw i basen ogrodowy</figcaption></figure>
+      <figure class="o2"><img src="img/wiata-grill.webp" width="1024" height="683" loading="lazy" alt="Kamienne palenisko pod drewnianą wiatą"><figcaption>Palenisko pod wiatą</figcaption></figure>
+      <figure class="o3"><img src="img/poddasze-ping.webp" width="1024" height="683" loading="lazy" alt="Stół do tenisa stołowego na poddaszu"><figcaption>Ping-pong na poddaszu</figcaption></figure>
+      <figure class="o4"><img src="img/ogrod-wiata.webp" width="743" height="768" loading="lazy" alt="Drewniana wiata grillowa w ogrodzie"><figcaption>Wiata grillowa</figcaption></figure>
+      <figure class="o5"><img src="img/balia-600.webp" srcset="img/balia-600.webp 600w, img/balia-1000.webp 1000w" sizes="(max-width:640px) 50vw, 400px" width="600" height="674" loading="lazy" alt="Goście w gorącej balii wśród drzew"><figcaption>Gorąca balia na zamówienie</figcaption></figure>
+      <figure class="o6"><img src="img/dom-wieczor.webp" width="1024" height="768" loading="lazy" alt="Dom i ogród o zmierzchu, widok z góry"><figcaption>Dom i ogród o zmierzchu</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sek szara">
+  <div class="wrap">
+    <div class="glowa"><h2>Pod polaną przez cały rok</h2></div>
+    <div class="rok">
+      <figure class="r1"><img class="szczyt" src="img/polana-800.webp" srcset="img/polana-800.webp 800w, img/polana-1500.webp 1500w" sizes="(max-width:960px) 100vw, 740px" width="1500" height="1125" loading="lazy" alt="Łąka z mniszkami w Korbielowie, w tle stoki Pilska">
+        <figcaption><h3>Wiosna i lato</h3><p>Łąki pod Pilskiem, szlaki na Pilsko, Babią Górę i Rysiankę, trasy rowerowe i wodospad w Korbielowie.</p></figcaption></figure>
+      <figure class="r2"><img class="szczyt" src="img/zima-dom.webp" width="576" height="768" loading="lazy" alt="Dom Pod Polanką zimą, w śniegu">
+        <figcaption><h3>Zima</h3><p>Stoki narciarskie tuż obok, do domu dojedziesz na nartach.</p></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sek" id="opinie">
+  <div class="wrap">
+    <div class="glowa">
+      <h2>Co piszą goście</h2>
+      <div class="ocena-pas"><span>Google: „doskonała”, 207 opinii</span><span>Booking.com: „doskonała”, 214 opinii</span></div>
+    </div>
+  </div>
+  <div class="kar" data-kar>
+    <div class="kar-tor">
+      <article class="opinia"><blockquote>„Bardzo fajne miejsce. Miła pani właścicielka, smaczne śniadania, czyste i ładne pokoje. Blisko do szlaku i wyciągu. Bardzo udany pobyt.”</blockquote><cite>Ewa Kurtyka<span>Google</span></cite></article>
+      <article class="opinia"><blockquote>„Bardzo ładny stylowy dom z pięknie przystrojoną jadalnią, fajne pokoje, bawialnia dla dzieci na poddaszu, dla dorosłych stoły do planszówek, ping pong itp.”</blockquote><cite>Wojtek<span>Google</span></cite></article>
+      <article class="opinia"><blockquote>„Przemiła właścicielka, bardzo dobra lokalizacja, czyste pokoje. Duży parking dla gości. Ogród i placyk zabaw dla dzieci - zadbany. Pyszne śniadania!”</blockquote><cite>Małgorzata<span>Booking.com, ocena 10</span></cite></article>
+      <article class="opinia"><blockquote>„Pobyt bardzo udany, dom wypoczynkowy z b. dobrymi warunkami bytowymi. Właścicielka i obsługa bardzo się stara stworzyć dobre warunki. Posiłki jak w domu.”</blockquote><cite>Lech Figura<span>Google</span></cite></article>
+      <article class="opinia"><blockquote>„Przesympatyczna gospodyni Pani Małgosia. Duży czysty pokój, z łazienką. Dostęp do kuchni. Smaczne śniadanie i pyszne ciasto.”</blockquote><cite>Małgorzata Arma<span>Google</span></cite></article>
+      <article class="opinia"><blockquote>„Lokalizacja, cisza, dobry parking. W sam raz dla samotnego motocyklisty :) Ale nie tylko.”</blockquote><cite>Sławomir<span>Booking.com, ocena 10</span></cite></article>
+    </div>
+    <div class="kar-nav">
+      <button type="button" data-kier="-1" aria-label="Poprzednie opinie"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4 6.5 10l6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+      <button type="button" data-kier="1" aria-label="Następne opinie"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7.5 4 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<section class="sek kontakt" id="kontakt">
+  <div class="wrap">
+    <div class="kontakt-in">
+      <div class="dane">
+        <h2>Rezerwacja i kontakt</h2>
+        <p style="margin-top:16px">Wolne terminy i ceny najszybciej sprawdzimy przez telefon.</p>
+        <a class="tel" href="tel:+48508714249">508 714 249</a>
+        <p><a href="mailto:gspocinska@interia.pl">gspocinska@interia.pl</a></p>
+        <p>Dom Wypoczynkowy „Pod Polanką”<br>Małgorzata Spocińska-Wrona<br>Ślepa Dolina 4, 34-335 Korbielów (gmina Jeleśnia)</p>
+        <p class="soc"><a href="https://www.facebook.com/podpolanka" rel="noopener">Facebook</a><a href="https://www.instagram.com/podpolankakorbielow/" rel="noopener">Instagram</a></p>
+      </div>
+      <form class="form" id="zapytanie" novalidate>
+        <h3>Zapytaj o termin</h3>
+        <div class="pola">
+          <div><label for="f-imie">Imię i nazwisko</label><input id="f-imie" name="imie" autocomplete="name"></div>
+          <div><label for="f-tel">Telefon lub e-mail</label><input id="f-tel" name="kontakt" autocomplete="tel"></div>
+          <div><label for="f-od">Przyjazd</label><input id="f-od" name="od" type="date"></div>
+          <div><label for="f-do">Wyjazd</label><input id="f-do" name="do" type="date"></div>
+          <div class="cala"><label for="f-os">Liczba osób</label><input id="f-os" name="osoby" inputmode="numeric"></div>
+          <div class="cala"><label for="f-wiad">Wiadomość</label><textarea id="f-wiad" name="wiadomosc"></textarea></div>
+        </div>
+        <button class="btn btn-dach" type="submit">Wyślij zapytanie</button>
+        <p class="info" role="status">To podgląd strony - formularz zacznie wysyłać zapytania na docelowej stronie.</p>
+      </form>
+    </div>
+    <div class="mapa">
+      <iframe title="Mapa dojazdu - Ślepa Dolina 4, Korbielów" src="https://www.google.com/maps?q=%C5%9Alepa+Dolina+4,+34-335+Korbiel%C3%B3w&amp;z=14&amp;output=embed" width="1200" height="420" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="stopka">
+  <div class="wrap">
+    <div class="stopka-in">
+      <div>
+        <a class="logo" href="./"><svg aria-hidden="true"><use href="#dom"/></svg><span>POD POLANKĄ</span></a>
+        <p>Dom Wypoczynkowy w Korbielowie, pod Pilskiem</p>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <p><a href="tel:+48508714249">508 714 249</a></p>
+        <p><a href="mailto:gspocinska@interia.pl">gspocinska@interia.pl</a></p>
+        <p>Ślepa Dolina 4, 34-335 Korbielów</p>
+      </div>
+      <div>
+        <h3>Na stronie</h3>
+        <p><a href="#pokoje">Pokoje</a></p>
+        <p><a href="#okolica">Okolica i szlaki</a></p>
+        <p><a href="#opinie">Opinie</a></p>
+      </div>
+    </div>
+    <div class="stopka-dol">
+      <span>© 2026 Dom Wypoczynkowy Pod Polanką</span>
+      <a class="wylinka-badge" href="https://wylinka.pl/?utm_source=podpolankakorbielow.pl&amp;utm_medium=stopka&amp;utm_campaign=wykonanie" rel="noopener" title="Strona wykonana przez Wylinka"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false" fill="currentColor"><path d="M9.8 22.8l-1.2-7.9 2.2-3.7 15.5 4.6-.5 1.5-7.2 5.5 4.7 15.6 5-15.6 7 0 4.1 12.7-4.2-.9-2.6 1.8-.8-2.2-5.3 15.6-4.3 0 .4 .2-2.1 2.8-1.3-1.1 1.1-1.4-3.1 .2-.1-1.7 2.2-.1-5.7-16.5-4.8 .6-.8 3.1 0 .5-.3 .5 .8 2.2-1.6 .5-.4-1.3-.8 1.6-1.5-.8 .8-1.6-1.4 .6-.6-1.6 2.3-.8 .2-.4 1.3-4.8 5.9-.8-2.4-6.9zM15.2 13.7l-.1-.4-.4 .8-.1 .8 .1 1 .1 .4 .3 .7 .3-.9 .1-.7 0-.8z"/><path class="wy-pod" d="M37.1 49.8l-4.5-13.3 2.6-1.8 4.2 .9 .9 2.8 3-9.7 0-.5 .1-.8 3.2-8.4 .5-1 .6-1 .9-1.1 1.3-1 1.1-.7 1.4-.5 1.4-.3 .7 0 .9 0 1.2 .3 1.4 .6 .8 .5 .7 .7 .6 .7 .5 .9 .3 .9 .1 .9 0 .8-.2 .9-.5 .9-.5 .6-.7 .5-.7 .3-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.6-.1-.6-.3-.7-.4-.5-.4-.4-.5-.3-.6-.3-.7 0-.7 .1-.6 .1-.5 .4-.5 .5-.3 .5-.2 .7-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1-2.1-2.8 .4-.2z"/><path class="wy-old" d="M40.8 50l.4-.2-4.1 0-4.2-12.5 2.5-1.7 4.3 .9 .6 1.9 .6-1.6 0-.3 2.4-7.8 0-.5 .1-.8 3.2-8.4 .4-.8 .6-.9 .9-1.2 .9-.9 1.3-.8 1.4-.6 1.2-.3 1.4-.1 1.3 .1 .6 .2 .8 .3 1.1 .6 .9 .7 .7 .9 .5 .9 .3 .9 .1 1.1-.1 .9-.3 .9-.4 .7-.6 .7-.6 .4-.6 .2-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.5-.1-.6-.2-.6-.3-.5-.4-.5-.5-.3-.6-.3-.7-.1-.6 0-.6 .1-.6 .3-.6 .5-.3 .4-.2 .5-.1 .5-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1zM49.6 17.1l.6 1.7-1.5 1.9 .4 .4 1.8-2.1-.7-2.1zM48.1 28.3l.5 1.8-1.7 1.8 .4 .4 1.9-2-.6-2.2zM37.9 41.7l1.7-1.5-.4-.4-1.7 1.4zM42.6 38.7l-1.5 2.8 1.1 2-1.3 2.6 .5 .2 1.5-2.8-1.1-2 1.4-2.5z"/></svg><span>wykonanie: <b>Wylinka</b></span></a>
+    </div>
+  </div>
+</footer>
+<script src="app.js" defer></script>
+</body>
+</html>
